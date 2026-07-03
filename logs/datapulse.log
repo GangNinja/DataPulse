@@ -1,0 +1,217 @@
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Connecting to GitHub...
+INFO Connected to database and verified tables.
+INFO Fetching repository...
+INFO Fetching repository tensorflow/tensorflow from GitHub...
+INFO Duplicate repository found. Existing record updated.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Connected to database and verified tables.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Connecting to GitHub...
+INFO Connected to database and verified tables.
+INFO Fetching repository...
+INFO Fetching repository tensorflow/tensorflow from GitHub...
+INFO Duplicate repository found. Existing record updated.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Connecting to GitHub...
+INFO Connected to database and verified tables.
+INFO Fetching repository...
+INFO Fetching repository tensorflow/tensorflow from GitHub...
+INFO Duplicate repository found. Existing record updated.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Connected to database and verified tables.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Connecting to GitHub...
+INFO Connected to database and verified tables.
+INFO Fetching repositories...
+INFO Fetching repositories for GitHub account microsoft...
+INFO Fetched page 1 containing 100 repositories.
+INFO Fetched page 2 containing 100 repositories.
+INFO Fetched page 3 containing 100 repositories.
+INFO Fetched page 4 containing 100 repositories.
+INFO Fetched page 5 containing 100 repositories.
+INFO Fetched page 6 containing 100 repositories.
+INFO Fetched page 7 containing 100 repositories.
+INFO Fetched page 8 containing 100 repositories.
+INFO Fetched page 9 containing 100 repositories.
+INFO Fetched page 10 containing 100 repositories.
+INFO Fetched page 11 containing 100 repositories.
+INFO Fetched page 12 containing 100 repositories.
+INFO Fetched page 13 containing 100 repositories.
+INFO Fetched page 14 containing 100 repositories.
+INFO Fetched page 15 containing 100 repositories.
+INFO Fetched page 16 containing 100 repositories.
+INFO Fetched page 17 containing 100 repositories.
+INFO Fetched page 18 containing 100 repositories.
+INFO Fetched page 19 containing 100 repositories.
+INFO Fetched page 20 containing 100 repositories.
+INFO Fetched page 21 containing 100 repositories.
+INFO Fetched page 22 containing 100 repositories.
+INFO Fetched page 23 containing 100 repositories.
+INFO Fetched page 24 containing 100 repositories.
+INFO Fetched page 25 containing 100 repositories.
+INFO Fetched page 26 containing 100 repositories.
+INFO Fetched page 27 containing 100 repositories.
+INFO Fetched page 28 containing 100 repositories.
+INFO Fetched page 29 containing 100 repositories.
+INFO Fetched page 30 containing 100 repositories.
+INFO Fetched page 31 containing 100 repositories.
+INFO Fetched page 32 containing 100 repositories.
+INFO Fetched page 33 containing 100 repositories.
+INFO Fetched page 34 containing 100 repositories.
+INFO Fetched page 35 containing 100 repositories.
+INFO Fetched page 36 containing 100 repositories.
+INFO Fetched page 37 containing 100 repositories.
+INFO Fetched page 38 containing 100 repositories.
+INFO Fetched page 39 containing 100 repositories.
+INFO Fetched page 40 containing 100 repositories.
+INFO Fetched page 41 containing 100 repositories.
+INFO Fetched page 42 containing 100 repositories.
+INFO Fetched page 43 containing 100 repositories.
+INFO Fetched page 44 containing 100 repositories.
+INFO Fetched page 45 containing 100 repositories.
+INFO Fetched page 46 containing 100 repositories.
+INFO Fetched page 47 containing 100 repositories.
+INFO Fetched page 48 containing 100 repositories.
+INFO Fetched page 49 containing 100 repositories.
+INFO Fetched page 50 containing 100 repositories.
+INFO Fetched page 51 containing 100 repositories.
+INFO Fetched page 52 containing 100 repositories.
+INFO Fetched page 53 containing 100 repositories.
+INFO Fetched page 54 containing 100 repositories.
+INFO Fetched page 55 containing 100 repositories.
+INFO Fetched page 56 containing 100 repositories.
+INFO Fetched page 57 containing 100 repositories.
+INFO Fetched page 58 containing 100 repositories.
+INFO Fetched page 59 containing 100 repositories.
+INFO Fetched page 60 containing 100 repositories.
+INFO Fetched page 61 containing 100 repositories.
+INFO Fetched page 62 containing 100 repositories.
+INFO Fetched page 63 containing 100 repositories.
+INFO Fetched page 64 containing 100 repositories.
+INFO Fetched page 65 containing 100 repositories.
+INFO Fetched page 66 containing 100 repositories.
+INFO Fetched page 67 containing 100 repositories.
+INFO Fetched page 68 containing 100 repositories.
+INFO Fetched page 69 containing 100 repositories.
+INFO Fetched page 70 containing 100 repositories.
+INFO Fetched page 71 containing 100 repositories.
+INFO Fetched page 72 containing 100 repositories.
+INFO Fetched page 73 containing 100 repositories.
+INFO Fetched page 74 containing 100 repositories.
+INFO Fetched page 75 containing 100 repositories.
+INFO Fetched page 76 containing 100 repositories.
+INFO Fetched page 77 containing 100 repositories.
+INFO Fetched page 78 containing 100 repositories.
+INFO Fetched page 79 containing 100 repositories.
+INFO Fetched page 80 containing 100 repositories.
+INFO Fetched page 81 containing 100 repositories.
+INFO Fetched page 82 containing 64 repositories.
+INFO Fetched 8164 repositories from GitHub.
+INFO Stored 8164 repositories.
+INFO Refreshed 8165 repository metric rows.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Connected to database and verified tables.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+WARNING Duplicate skipped: OpenAI/datapulse
+INFO Stored 1 repositories.
+INFO Connected to database and verified tables.
+INFO Inserted new repository record.
+INFO Repository stored successfully.
+INFO Refreshed 1 repository metric rows.
+INFO Fetching repositories for GitHub account apache...
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched page 2 containing 1 repositories.
+INFO Fetched 2 repositories from GitHub.
+INFO Fetching repositories for GitHub account octocat...
+INFO octocat is not an organization endpoint. Trying user endpoint.
+INFO Fetched page 1 containing 1 repositories.
+INFO Fetched 1 repositories from GitHub.
+WARNING Duplicate skipped: OpenAI/datapulse

@@ -11,13 +11,28 @@ load_dotenv()
 
 @dataclass(frozen=True)
 class Settings:
-    """Runtime configuration for the DataPulse Week 1 pipeline."""
+    """Runtime configuration for the DataPulse pipeline."""
 
     github_token: str
     github_owner: str
-    github_repo: str
+    github_repo: str | None
     database_url: str
     request_timeout_seconds: int = 30
+
+
+def _read_positive_int(variable_name: str, default: int) -> int:
+    """Read a positive integer environment variable."""
+    raw_value = os.getenv(variable_name, str(default)).strip()
+
+    try:
+        value = int(raw_value)
+    except ValueError as exc:
+        raise ValueError(f"{variable_name} must be an integer.") from exc
+
+    if value <= 0:
+        raise ValueError(f"{variable_name} must be greater than zero.")
+
+    return value
 
 
 def get_settings() -> Settings:
@@ -33,9 +48,12 @@ def get_settings() -> Settings:
     settings = Settings(
         github_token=os.getenv("GITHUB_TOKEN", "").strip(),
         github_owner=os.getenv("GITHUB_OWNER", "").strip(),
-        github_repo=os.getenv("GITHUB_REPO", "").strip(),
+        github_repo=os.getenv("GITHUB_REPO", "").strip() or None,
         database_url=os.getenv("DATABASE_URL", "").strip(),
-        request_timeout_seconds=int(os.getenv("REQUEST_TIMEOUT_SECONDS", "30")),
+        request_timeout_seconds=_read_positive_int(
+            "REQUEST_TIMEOUT_SECONDS",
+            default=30,
+        ),
     )
 
     missing_values = [
@@ -43,7 +61,6 @@ def get_settings() -> Settings:
         for variable_name, value in {
             "GITHUB_TOKEN": settings.github_token,
             "GITHUB_OWNER": settings.github_owner,
-            "GITHUB_REPO": settings.github_repo,
             "DATABASE_URL": settings.database_url,
         }.items()
         if not value
