@@ -11,6 +11,10 @@ from database.database import (
     get_db_session,
     initialize_database,
 )
+from extensions.repository_health import (
+    RepositoryHealthError,
+    refresh_repository_health,
+)
 from ingestion.fetch_repositories import (
     fetch_repositories_for_account,
     fetch_repository,
@@ -36,7 +40,8 @@ def run_pipeline() -> None:
         3. Transform and validate the response.
         4. Store raw repository data in PostgreSQL.
         5. Refresh analytics-ready repository metrics.
-        6. Print a success message.
+        6. Refresh repository health scores.
+        7. Print a success message.
     """
     settings = get_settings()
 
@@ -59,12 +64,14 @@ def run_pipeline() -> None:
         with get_db_session(session_factory) as session:
             saved_repository = upsert_repository(session, repository_data)
             metric_count = refresh_repository_metrics(session)
+            health_count = refresh_repository_health(session)
 
         print(
             "Success: "
             f"{saved_repository.owner}/{saved_repository.repo_name} "
             "was stored in PostgreSQL. "
-            f"{metric_count} analytics rows refreshed."
+            f"{metric_count} analytics rows refreshed. "
+            f"{health_count} health rows refreshed."
         )
         return
 
@@ -77,12 +84,14 @@ def run_pipeline() -> None:
     with get_db_session(session_factory) as session:
         summary = store_repositories(session, repositories_data)
         metric_count = refresh_repository_metrics(session)
+        health_count = refresh_repository_health(session)
 
     print(
         "Success: "
         f"stored {summary.inserted_count} repositories, "
         f"skipped {summary.skipped_duplicates} duplicates, "
-        f"and refreshed {metric_count} analytics rows."
+        f"refreshed {metric_count} analytics rows, "
+        f"and refreshed {health_count} health rows."
     )
 
 
@@ -103,4 +112,7 @@ if __name__ == "__main__":
         raise SystemExit(1) from exc
     except RepositoryMetricError as exc:
         logger.error("Repository metric failure: %s", exc)
+        raise SystemExit(1) from exc
+    except RepositoryHealthError as exc:
+        logger.error("Repository health failure: %s", exc)
         raise SystemExit(1) from exc
