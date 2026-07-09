@@ -1,5 +1,7 @@
 # DataPulse Docs
 
-This folder is reserved for project documentation as the internship project grows.
+This folder contains supporting project documentation.
 
-For Week 1, the main project documentation lives in the root `README.md`.
+- `adr/ADR-001.md`: Core architecture decision record.
+- `week4_dashboard_notes.md`: Dashboard reminders for health score
+  interpretation and possible log-scaling improvements.
