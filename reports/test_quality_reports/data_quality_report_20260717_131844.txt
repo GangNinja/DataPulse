@@ -1,0 +1,12 @@
+-----------------------------------
+DATA QUALITY REPORT
+-----------------------------------
+Generated At         : 2026-07-17T13:18:44.796632+00:00
+Records Processed   : 1
+Valid Records       : 1
+Duplicate Records   : 0
+Missing Values Fixed: 0
+Invalid URLs        : 0
+Rejected Records    : 0
+Quality Score       : 100%
+-----------------------------------

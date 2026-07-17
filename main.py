@@ -20,6 +20,8 @@ from ingestion.fetch_repositories import (
     fetch_repository,
 )
 from ingestion.github_client import GitHubAPIError, GitHubClient
+from quality.quality_checker import run_repository_quality_checks
+from quality.report import save_quality_report
 from transformations.repository_metrics import (
     RepositoryMetricError,
     refresh_repository_metrics,
@@ -38,10 +40,11 @@ def run_pipeline() -> None:
         1. Read configuration.
         2. Fetch repository data from GitHub.
         3. Transform and validate the response.
-        4. Store raw repository data in PostgreSQL.
-        5. Refresh analytics-ready repository metrics.
-        6. Refresh repository health scores.
-        7. Print a success message.
+        4. Run data quality checks and generate a quality report.
+        5. Store raw repository data in PostgreSQL.
+        6. Refresh analytics-ready repository metrics.
+        7. Refresh repository health scores.
+        8. Print a success message.
     """
     settings = get_settings()
 
@@ -60,9 +63,17 @@ def run_pipeline() -> None:
             owner=settings.github_owner,
             repo=settings.github_repo,
         )
+        quality_result = run_repository_quality_checks([repository_data])
+        quality_report_path = save_quality_report(quality_result.report)
+
+        if not quality_result.valid_records:
+            raise ValueError("No valid repository records passed data quality checks.")
 
         with get_db_session(session_factory) as session:
-            saved_repository = upsert_repository(session, repository_data)
+            saved_repository = upsert_repository(
+                session,
+                quality_result.valid_records[0],
+            )
             metric_count = refresh_repository_metrics(session)
             health_count = refresh_repository_health(session)
 
@@ -71,7 +82,8 @@ def run_pipeline() -> None:
             f"{saved_repository.owner}/{saved_repository.repo_name} "
             "was stored in PostgreSQL. "
             f"{metric_count} analytics rows refreshed. "
-            f"{health_count} health rows refreshed."
+            f"{health_count} health rows refreshed. "
+            f"Quality report: {quality_report_path}"
         )
         return
 
@@ -80,9 +92,14 @@ def run_pipeline() -> None:
         github_client=github_client,
         account=settings.github_owner,
     )
+    quality_result = run_repository_quality_checks(repositories_data)
+    quality_report_path = save_quality_report(quality_result.report)
+
+    if not quality_result.valid_records:
+        raise ValueError("No valid repository records passed data quality checks.")
 
     with get_db_session(session_factory) as session:
-        summary = store_repositories(session, repositories_data)
+        summary = store_repositories(session, quality_result.valid_records)
         metric_count = refresh_repository_metrics(session)
         health_count = refresh_repository_health(session)
 
@@ -91,7 +108,8 @@ def run_pipeline() -> None:
         f"stored {summary.inserted_count} repositories, "
         f"skipped {summary.skipped_duplicates} duplicates, "
         f"refreshed {metric_count} analytics rows, "
-        f"and refreshed {health_count} health rows."
+        f"refreshed {health_count} health rows, "
+        f"and generated quality report {quality_report_path}."
     )
 
 
