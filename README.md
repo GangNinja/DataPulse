@@ -2,78 +2,82 @@
 
 > **An End-to-End GitHub Repository Intelligence Platform**
 >
-> Automatically collects GitHub repository data, transforms it into analytics-ready datasets, calculates repository health metrics, and stores everything in PostgreSQL for future analytics and dashboard development.
+> DataPulse is a production-inspired Data Engineering project that collects GitHub repository data, performs comprehensive data quality validation and cleaning, transforms the data into analytics-ready datasets, calculates repository health metrics, and visualizes insights through an interactive Streamlit dashboard.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.x-red)
 ![GitHub API](https://img.shields.io/badge/API-GitHub-black?logo=github)
-![Status](https://img.shields.io/badge/Status-Week%203%20Completed-success)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)
+![Status](https://img.shields.io/badge/Status-Week%204%20Completed-success)
 
 ---
 
-# 📌 Overview
+# 📖 Overview
 
-**DataPulse** is a portfolio-oriented Data Engineering project developed as part of the **Foundations of Data Engineering Internship**.
+DataPulse is a complete Data Engineering pipeline developed as part of the **Foundations of Data Engineering Internship**.
 
-The project builds a complete data pipeline that automatically retrieves GitHub repository data, stores it in PostgreSQL, transforms raw data into analytics-ready datasets, and generates repository health insights for business analysis.
+The project automatically collects GitHub repository information through the GitHub REST API, validates and cleans the data, stores it inside PostgreSQL, transforms it into analytics-ready datasets, calculates Repository Health Scores, and presents business insights using an interactive Streamlit dashboard.
 
-After Week 3, DataPulse has evolved into a **GitHub Repository Intelligence Platform** capable of ingesting, transforming, analysing, and scoring repository data.
-
----
-
-# 🎯 Objectives
-
-## ✅ Week 1 Objectives
-
-- Connect to GitHub REST API
-- Fetch repository metadata
-- Store data into PostgreSQL
-- Build modular architecture
-- Configure environment variables
-- Create the project foundation
+By the end of Week 4, the project demonstrates a complete ETL workflow along with data quality management and business intelligence visualization.
 
 ---
 
-## ✅ Week 2 Objectives
+# 🎯 Project Objectives
 
-- Improve API ingestion
-- Support multiple repositories
-- Create transformation layer
-- Generate analytics metrics
-- Write SQL analytical queries
-- Add structured logging
-- Add automated tests
-- Improve documentation
+## ✅ Week 1
+- GitHub REST API integration
+- PostgreSQL database setup
+- SQLAlchemy ORM
+- Modular project architecture
+- Environment configuration
 
 ---
 
-## ✅ Week 3 Objectives
+## ✅ Week 2
+- Multi-repository ingestion
+- Data transformation layer
+- SQL analytics
+- Logging
+- Automated testing
 
-- Build a meaningful mini extension
-- Calculate Repository Health Score
-- Categorize repositories based on health
-- Improve testing coverage
-- Improve project documentation
-- Prepare project for deployment
+---
+
+## ✅ Week 3
+- Repository Health Score
+- Repository ranking
+- Health categorization
+- Mini Extension
+- Documentation improvements
+
+---
+
+## ✅ Week 4
+- Data Quality Framework
+- Missing value handling
+- Duplicate detection & removal
+- Data validation
+- Data cleaning
+- Data Quality Reports
+- Interactive Streamlit Dashboard
+- Additional testing
 
 ---
 
 # 💼 Business Problem
 
-Organizations often monitor hundreds of GitHub repositories.
+Organizations maintain hundreds of GitHub repositories.
 
-Manually tracking:
+Tracking repository popularity, activity, technology usage, and overall repository quality manually becomes increasingly difficult.
 
-- Repository popularity
-- Community engagement
-- Activity
-- Repository health
-- Technology trends
+DataPulse automates this process by:
 
-is inefficient.
-
-DataPulse automates this process by collecting repository data, transforming it into useful business metrics, and generating a health score for each repository.
+- Collecting repository metadata
+- Cleaning inconsistent data
+- Eliminating duplicate records
+- Generating repository health metrics
+- Producing analytics-ready datasets
+- Displaying insights in a dashboard
 
 ---
 
@@ -81,78 +85,93 @@ DataPulse automates this process by collecting repository data, transforming it 
 
 ## Week 1
 
-- ✅ GitHub REST API
-- ✅ PostgreSQL Database
-- ✅ SQLAlchemy ORM
-- ✅ Modular Architecture
-- ✅ Environment Configuration
+- GitHub REST API Integration
+- PostgreSQL Data Warehouse
+- SQLAlchemy ORM
+- Modular Architecture
+- Environment Variables
 
 ---
 
 ## Week 2
 
-- ✅ Multiple Repository Support
-- ✅ Analytics Transformation Layer
-- ✅ SQL Analytics Queries
-- ✅ Logging
-- ✅ Automated Testing
-- ✅ Improved Documentation
+- Multi Repository Support
+- Data Transformation Layer
+- SQL Analytics
+- Logging
+- Unit Testing
 
 ---
 
 ## Week 3
 
-- ✅ Repository Health Score
-- ✅ Health Categories
-- ✅ Repository Ranking
-- ✅ Extended Test Coverage
-- ✅ Mini Extension Completed
+- Repository Health Score
+- Repository Ranking
+- Health Categories
+- Extended Testing
+
+---
+
+## Week 4
+
+- Data Quality Framework
+- Missing Value Handling
+- Duplicate Detection
+- Duplicate Removal
+- Data Validation
+- Data Cleaning
+- Data Quality Reports
+- Streamlit Dashboard
+- Interactive Analytics
+- Dashboard KPIs
+- Repository Health Visualization
 
 ---
 
 # 🏗 System Architecture
 
 ```text
-                 GitHub REST API
-                        │
-                        ▼
+                GitHub REST API
+                       │
+                       ▼
                Repository Ingestion
-                        │
-                        ▼
-               Data Validation
-                        │
-                        ▼
+                       │
+                       ▼
+             Data Quality Framework
+        (Validation + Cleaning + Reports)
+                       │
+                       ▼
             Transformation Layer
-                        │
-                        ▼
-              PostgreSQL Warehouse
-                        │
-                        ▼
+                       │
+                       ▼
+             PostgreSQL Warehouse
+                       │
+                       ▼
           Repository Health Engine
-                        │
-                        ▼
-             Analytics SQL Queries
-                        │
-                        ▼
-          Future Dashboard (Week 4)
+                       │
+                       ▼
+             SQL Analytics Layer
+                       │
+                       ▼
+            Streamlit Dashboard
 ```
 
 ---
 
-# 🛠 Tech Stack
+# ⚙ Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
-| Python 3.12 | Core Programming Language |
+| Python | Programming |
 | GitHub REST API | Data Source |
-| Requests | API Communication |
-| PostgreSQL | Data Warehouse |
+| Requests | API Requests |
+| PostgreSQL | Database |
 | SQLAlchemy | ORM |
 | psycopg2 | PostgreSQL Driver |
-| python-dotenv | Environment Variables |
+| Streamlit | Dashboard |
+| Plotly | Interactive Charts |
+| Pytest | Testing |
 | Logging | Monitoring |
-| Pytest | Automated Testing |
-| Git | Version Control |
 
 ---
 
@@ -162,65 +181,145 @@ DataPulse automates this process by collecting repository data, transforming it 
 DataPulse/
 │
 ├── config/
+├── dashboard/
+│   └── streamlit_app.py
+│
 ├── database/
 ├── docs/
-├── ingestion/
-├── transformations/
+│
 ├── extensions/
 │   └── repository_health.py
+│
+├── ingestion/
+│
+├── quality/
+│   ├── validation.py
+│   ├── cleaning.py
+│   ├── quality_checker.py
+│   └── report.py
+│
+├── reports/
+│
 ├── sql/
 ├── tests/
+├── transformations/
 ├── utils/
 ├── logs/
-├── main.py
-├── requirements.txt
+│
 ├── README.md
-├── .gitignore
-└── .env.example
+├── requirements.txt
+└── main.py
 ```
 
 ---
 
-# 🔄 Data Pipeline
+# 🔄 ETL Pipeline
 
 ```text
-GitHub REST API
+GitHub API
+
         │
+
         ▼
+
 Repository Ingestion
+
         │
+
         ▼
+
 Data Validation
+
         │
+
         ▼
+
+Data Cleaning
+
+        │
+
+        ▼
+
 Transformation Layer
+
         │
+
         ▼
+
 PostgreSQL Warehouse
+
         │
+
         ▼
+
 Repository Health Score
+
         │
+
         ▼
-Analytics SQL Queries
+
+Analytics Queries
+
+        │
+
+        ▼
+
+Streamlit Dashboard
+```
+
+---
+
+# 🧹 Data Quality Framework
+
+The Week 4 enhancement introduces a dedicated Data Quality Framework.
+
+It automatically performs:
+
+- Missing value detection
+- NULL value handling
+- Duplicate repository detection
+- Duplicate removal
+- URL validation
+- Repository name validation
+- Numeric field validation
+- Data normalization
+
+---
+
+# 📊 Data Quality Report
+
+Each execution generates a quality report summarizing:
+
+- Total records processed
+- Valid records
+- Missing values fixed
+- Duplicate records removed
+- Invalid records rejected
+- Overall Data Quality Score
+
+Example:
+
+```text
+Records Processed : 250
+Valid Records : 243
+Missing Values Fixed : 11
+Duplicates Removed : 5
+Rejected Records : 2
+Quality Score : 97%
 ```
 
 ---
 
 # ❤️ Repository Health Score
 
-The Repository Health Score is the **Week 3 Mini Extension**.
+The Repository Health Engine evaluates repositories using metrics such as:
 
-It evaluates repository quality using repository statistics and generates a score between **0 and 100**.
+- Stars
+- Forks
+- Watchers
+- Repository activity
 
-Example factors include:
-
-- ⭐ Stars
-- 🍴 Forks
-- 👀 Watchers
-- 📅 Repository Activity
-
-Repositories are classified as:
+Repositories are classified into:
 
 | Score | Category |
 |--------|----------|
@@ -232,17 +331,32 @@ Repositories are classified as:
 
 ---
 
+# 📈 Dashboard
+
+The interactive Streamlit dashboard provides:
+
+- Total repositories
+- Average stars
+- Average forks
+- Language distribution
+- Top repositories
+- Repository Health Score distribution
+- Repositories needing attention
+- Data Quality summary
+
+---
+
 # 📊 Analytics
 
 Current analytics include:
 
 - Top repositories by stars
 - Top repositories by forks
-- Repository popularity
 - Programming language distribution
+- Repository popularity
 - Repository age
 - Repository Health Score
-- Repository rankings
+- Data Quality metrics
 
 ---
 
@@ -252,43 +366,45 @@ Automated tests cover:
 
 - API integration
 - Database operations
-- Repository transformations
-- Health score calculation
-- Health category generation
-- Duplicate handling
+- Data validation
+- Data cleaning
+- Duplicate detection
+- Health Score calculation
+- Dashboard utilities
 
 ---
 
 # 📝 Logging
 
-The application provides structured logging.
+The project provides structured logging.
 
 Example:
 
 ```text
-INFO Connecting to GitHub API...
 INFO Fetching repositories...
-INFO Repository stored successfully.
-INFO Calculating Repository Health...
-INFO Health Score Generated.
-WARNING Duplicate repository skipped.
-ERROR API request failed.
+INFO Running Data Quality Checks...
+INFO Missing values cleaned.
+INFO Duplicate repositories removed.
+INFO Repository Health calculated.
+INFO Dashboard started.
+WARNING Invalid repository URL detected.
+ERROR Validation failed.
 ```
 
 ---
 
-# ⚙ Installation
+# 🚀 Installation
 
 Clone the repository.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/datapulse.git
+git clone https://github.com/yourusername/DataPulse.git
 ```
 
-Navigate into the project.
+Navigate to the project.
 
 ```bash
-cd datapulse
+cd DataPulse
 ```
 
 Create a virtual environment.
@@ -303,48 +419,46 @@ Install dependencies.
 pip install -r requirements.txt
 ```
 
-Configure your `.env` file.
+Configure environment variables.
 
-Run:
+```bash
+cp .env.example .env
+```
+
+Run the project.
 
 ```bash
 python main.py
 ```
 
----
+Launch the dashboard.
 
-# 🗄 Database
-
-Current tables include:
-
-- Repositories
-- Repository Metrics
-- Repository Health
-
-The database stores repository metadata, analytics metrics, and health scores for reporting.
-
----
-
-# 📅 Project Status
-
-| Week | Status | Description |
-|------|--------|-------------|
-| ✅ Week 1 | Completed | Project Foundation |
-| ✅ Week 2 | Completed | Analytics Layer |
-| ✅ Week 3 | Completed | Repository Health Score (Mini Extension) |
-| ⏳ Week 4 | Upcoming | Dashboard, Docker & Deployment |
-| ⏳ Week 5 | Upcoming | Final Documentation & Presentation |
-
----
-
-# 📈 Current Progress
-
+```bash
+streamlit run dashboard/streamlit_app.py
 ```
+
+---
+
+# 📅 Project Progress
+
+| Week | Status |
+|------|--------|
+| ✅ Week 1 | Completed |
+| ✅ Week 2 | Completed |
+| ✅ Week 3 | Completed |
+| ✅ Week 4 | Completed |
+| ⏳ Week 5 | Docker, Deployment & Final Documentation |
+
+---
+
+# 📌 Current Progress
+
+```text
 Week 1  ✅ Foundation
 
 ↓
 
-Week 2  ✅ Analytics Layer
+Week 2  ✅ Analytics
 
 ↓
 
@@ -352,79 +466,62 @@ Week 3  ✅ Repository Health Score
 
 ↓
 
-Week 4  ⏳ Dashboard & Deployment
+Week 4  ✅ Data Quality + Dashboard
 
 ↓
 
-Week 5  ⏳ Final Showcase
+Week 5  ⏳ Docker + Deployment + Final Submission
 ```
 
-**Overall Completion:** **60%**
+**Overall Completion:** **80%**
 
 ---
 
-# 🚀 Roadmap
-
-## Week 4
-
-- Streamlit Dashboard
-- Docker Support
-- Application Deployment
-- Dashboard Analytics
-- Final Documentation
-
----
-
-## Week 5
-
-- Final Presentation
-- Reflection Report
-- Portfolio Improvements
-- Resume Ready Repository
-
----
-
-# 📚 Learning Outcomes
+# 🎓 Learning Outcomes
 
 This project demonstrates practical knowledge of:
 
-- Data Engineering
 - REST APIs
+- ETL Pipelines
+- Data Engineering
 - PostgreSQL
 - SQLAlchemy
-- Data Transformation
-- SQL Analytics
-- Python Logging
-- Automated Testing
-- Software Architecture
+- Data Cleaning
+- Data Validation
+- Data Quality
 - Repository Analytics
+- Streamlit
+- Plotly
+- Testing
+- Logging
+- Software Architecture
 
 ---
 
-# 🔮 Future Enhancements
+# 🚀 Future Enhancements
 
-- Interactive Streamlit Dashboard
+- Docker Support
 - Docker Compose
-- dbt Models
-- GitHub Actions
-- CI/CD Pipeline
 - Cloud Deployment
-- Interactive Visualizations
-- Advanced Repository Analytics
+- CI/CD Pipeline
+- GitHub Actions
+- Advanced Analytics
+- Automated Scheduling
+- Real-time Repository Monitoring
 
 ---
 
 # 🤝 Contributing
 
-This project is being developed as part of the **Foundations of Data Engineering Internship** and serves as a portfolio project.
+Contributions are welcome.
 
-Suggestions and improvements are welcome.
+Please fork the repository and submit a pull request.
 
 ---
 
 # 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
 ---
 
@@ -433,18 +530,24 @@ This project is licensed under the **MIT License**.
 - GitHub REST API
 - PostgreSQL
 - SQLAlchemy
+- Streamlit
+- Plotly
 - Python Community
-- Futurense Internship Program
-- Internship Mentors & Faculty
+- Foundations of Data Engineering Internship
+- Mentors and Faculty
 
 ---
 
-# ⭐ Current Status
+# ⭐ Project Status
 
+```
 ✅ Week 1 Completed
 
 ✅ Week 2 Completed
 
 ✅ Week 3 Completed
 
-🚀 Ready for Week 4
+✅ Week 4 Completed
+
+🚀 Ready for Week 5
+```
