@@ -139,11 +139,14 @@ def fetch_top_repositories(engine: Engine, limit: int = 10) -> list[dict[str, An
         SELECT
             r.owner,
             r.repo_name,
+            r.html_url,
             r.stars,
             r.forks,
             r.watchers,
+            r.open_issues,
+            r.updated_at,
             COALESCE(r.language, 'Unknown') AS language,
-            rh.health_score,
+            ROUND(rh.health_score::numeric, 2) AS health_score,
             rh.health_category
         FROM repositories AS r
         LEFT JOIN repository_health AS rh ON rh.repository_id = r.id
@@ -165,11 +168,14 @@ def fetch_healthiest_repositories(
         SELECT
             r.owner,
             r.repo_name,
+            r.html_url,
             r.stars,
             r.forks,
             r.watchers,
+            r.open_issues,
+            r.updated_at,
             COALESCE(r.language, 'Unknown') AS language,
-            rh.health_score,
+            ROUND(rh.health_score::numeric, 2) AS health_score,
             rh.health_category
         FROM repository_health AS rh
         JOIN repositories AS r ON r.id = rh.repository_id
@@ -191,11 +197,13 @@ def fetch_repositories_needing_attention(
         SELECT
             r.owner,
             r.repo_name,
+            r.html_url,
             r.stars,
             r.forks,
             r.watchers,
+            r.open_issues,
             r.updated_at,
-            rh.health_score,
+            ROUND(rh.health_score::numeric, 2) AS health_score,
             rh.health_category
         FROM repository_health AS rh
         JOIN repositories AS r ON r.id = rh.repository_id
