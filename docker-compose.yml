@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: datapulse_postgres
+    environment:
+      POSTGRES_DB: datapulse
+      POSTGRES_USER: datapulse_user
+      POSTGRES_PASSWORD: datapulse_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datapulse_user -d datapulse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dashboard:
+    build: .
+    container_name: datapulse_dashboard
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://datapulse_user:datapulse_password@postgres:5432/datapulse
+    ports:
+      - "${STREAMLIT_PORT:-8502}:8501"
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+    command:
+      - streamlit
+      - run
+      - dashboard/streamlit_app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
+
+  pipeline:
+    build: .
+    container_name: datapulse_pipeline
+    profiles:
+      - pipeline
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://datapulse_user:datapulse_password@postgres:5432/datapulse
+      REQUEST_TIMEOUT_SECONDS: ${REQUEST_TIMEOUT_SECONDS:-30}
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+    command: ["python", "main.py"]
+
+volumes:
+  postgres_data:

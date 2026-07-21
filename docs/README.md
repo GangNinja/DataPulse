@@ -6,3 +6,4 @@ This folder contains supporting project documentation.
 - `week4_dashboard_notes.md`: Dashboard reminders for health score
   interpretation and possible log-scaling improvements.
 - `week4_session2_dashboard.md`: Streamlit dashboard run notes.
+- `week4.md`: Week 4 data quality, dashboard, and Docker documentation.
