@@ -3,9 +3,9 @@ services:
     image: postgres:16-alpine
     container_name: datapulse_postgres
     environment:
-      POSTGRES_DB: datapulse
-      POSTGRES_USER: datapulse_user
-      POSTGRES_PASSWORD: datapulse_password
+      POSTGRES_DB: ${POSTGRES_DB:-datapulse}
+      POSTGRES_USER: ${POSTGRES_USER:-datapulse_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_for_local_docker}
     ports:
       - "5433:5432"
     volumes:
@@ -23,7 +23,7 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql+psycopg2://datapulse_user:datapulse_password@postgres:5432/datapulse
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-datapulse_user}:${POSTGRES_PASSWORD:-change_me_for_local_docker}@postgres:5432/${POSTGRES_DB:-datapulse}"
     ports:
       - "${STREAMLIT_PORT:-8502}:8501"
     volumes:
@@ -48,7 +48,7 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgresql+psycopg2://datapulse_user:datapulse_password@postgres:5432/datapulse
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-datapulse_user}:${POSTGRES_PASSWORD:-change_me_for_local_docker}@postgres:5432/${POSTGRES_DB:-datapulse}"
       REQUEST_TIMEOUT_SECONDS: ${REQUEST_TIMEOUT_SECONDS:-30}
     volumes:
       - ./logs:/app/logs
