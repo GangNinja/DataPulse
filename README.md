@@ -14,7 +14,7 @@
 
 **Program:** Futurense Summer Internship 2026
 
-**Track:** Foundations of Data Engineering (Hero Project)
+**Track:** Foundations of Data Engineering
 
 **Project Name:** DataPulse – GitHub Repository Intelligence Platform
 
